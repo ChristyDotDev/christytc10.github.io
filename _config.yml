@@ -28,8 +28,7 @@ twitter_username: Dr_Glocktopus
 github_username:  christytc10
 
 # Build settings
-#theme: minima
-theme: jekyll-theme-slate
+theme: minima
 plugins:
   - jekyll-feed
 
