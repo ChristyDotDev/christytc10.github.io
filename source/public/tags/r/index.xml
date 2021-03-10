@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R on Christy Codes</title>
+    <link>http://example.org/tags/r/</link>
+    <description>Recent content in R on Christy Codes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 10 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Testing R Markdown</title>
+      <link>http://example.org/posts/testing-r-markdown/</link>
+      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/testing-r-markdown/</guid>
+      <description>Describe what we’re going to try and do
+library(ffscrapr) Do something here with the league connection
+league &amp;lt;- sleeper_connect(season = 2021, league_id = 649923060580864000) rosters &amp;lt;- ff_rosters(league) print(rosters) ## # A tibble: 375 x 7 ## franchise_id franchise_name player_id player_name pos team age ## &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; ## 1 1 ChristyCampbell 6068 Devine Ozigbo RB JAX 24.4 ## 2 1 ChristyCampbell 1848 James White RB NE 29.</description>
+    </item>
+    
+  </channel>
+</rss>
