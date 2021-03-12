@@ -1,15 +1,16 @@
 ---
 title: Testing R Markdown
 author: Christy Campbell
-date: '2021-03-11'
-slug: testing-r-markdown
+date: '2021-03-12'
+slug: []
 categories: []
 tags:
   - R
-  - Markdown
   - Learning
-draft: false
+  - Markdown
+draft: no
 ---
+
 
 This is just to test out posting a blog entry as R Markdown since I've been mucking about
 with R to do some data analysis and visualisation. 

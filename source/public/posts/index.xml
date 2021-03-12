@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Christy Codes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Mar 2021 19:54:36 +0000</lastBuildDate><atom:link href="https://christytc10.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://christytc10.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Testing R Markdown</title>
+      <link>https://christytc10.github.io/posts/2021-03-12-testing-r-markdown/</link>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://christytc10.github.io/posts/2021-03-12-testing-r-markdown/</guid>
+      <description>  This is just to test out posting a blog entry as R Markdown since I’ve been mucking about with R to do some data analysis and visualisation.
+This is just a simple script which basically assigns a variable named test. Here I’m setting it to a simple vector with a couple dummy values
+test &amp;lt;- c(&amp;quot;val1&amp;quot;, &amp;quot;val2&amp;quot;) </description>
+    </item>
+    
     <item>
       <title>A blog? A notebook?</title>
       <link>https://christytc10.github.io/posts/my-first-post/</link>
