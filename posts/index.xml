@@ -16,16 +16,5 @@
       <description>Creating this site/blog mostly as a learning exercise. I&amp;rsquo;ve got a few wee sideprojects going but I want to start to get more focused in finishing/publishing them. At worst, it&amp;rsquo;ll be some environmental storytelling chronicling my slow(ish) descent into madness</description>
     </item>
     
-    <item>
-      <title>Testing R Markdown</title>
-      <link>https://christytc10.github.io/posts/testing-r-markdown/</link>
-      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://christytc10.github.io/posts/testing-r-markdown/</guid>
-      <description>Describe what we’re going to try and do
-library(ffscrapr) Do something here with the league connection
-league &amp;lt;- sleeper_connect(season = 2021, league_id = 649923060580864000) rosters &amp;lt;- ff_rosters(league) print(rosters) ## # A tibble: 375 x 7 ## franchise_id franchise_name player_id player_name pos team age ## &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; ## 1 1 ChristyCampbell 6068 Devine Ozigbo RB JAX 24.4 ## 2 1 ChristyCampbell 1848 James White RB NE 29.</description>
-    </item>
-    
   </channel>
 </rss>
