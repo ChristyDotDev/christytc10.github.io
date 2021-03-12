@@ -1,16 +1,12 @@
 ---
-title: Testing R Markdown
+title: Testin .Rmarkdown
 author: Christy Campbell
 date: '2021-03-12'
 slug: []
 categories: []
-tags:
-  - R
-  - Learning
-  - Markdown
-draft: no
+tags: []
+draft: yes
 ---
-
 
 This is just to test out posting a blog entry as R Markdown since I've been mucking about
 with R to do some data analysis and visualisation. 
@@ -18,6 +14,7 @@ with R to do some data analysis and visualisation.
 This is just a simple script which basically assigns a variable named test. Here I'm setting it
 to a simple vector with a couple dummy values
 
-```{r}
+
+```r
 test <- c("val1", "val2")
 ```
