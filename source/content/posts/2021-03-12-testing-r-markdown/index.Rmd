@@ -1,0 +1,17 @@
+---
+title: Testing R markdown
+author: Christy Campbell
+date: '2021-03-12'
+slug: []
+categories: []
+tags: []
+draft: yes
+---
+
+Testing adding R code to a markdown, been using R to learn data analysis and visualtion
+recently. 
+
+This code is just a simple variable assignment:
+```{R}
+someVar <- c("val1", "val2")
+```
