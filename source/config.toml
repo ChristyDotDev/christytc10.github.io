@@ -3,9 +3,16 @@ languageCode = "en-us"
 title = "Christy Codes"
 theme = "m10c"
 
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+
 [params]
   author = "Christy Campbell"
-  description = "I don't know what I'm doing"
+  description = "Just a super sharp-shooter. Shooting super super sharp shots"
   avatar = "https://avatars.githubusercontent.com/u/6845036?s=460&u=553e7df722c52b26858ea003e1ae3a13c6b84a47&v=4"
 
 [[params.social]]
