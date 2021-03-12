@@ -8,6 +8,17 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 12 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://christytc10.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>RMD</title>
+      <link>https://christytc10.github.io/posts/test-markdown-r-test/</link>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://christytc10.github.io/posts/test-markdown-r-test/</guid>
+      <description>  Testing adding R code to a markdown, been using R to learn data analysis and visualtion recently.
+This code is just a simple variable assignment:
+someVar &amp;lt;- c(&amp;quot;val1&amp;quot;, &amp;quot;val2&amp;quot;) </description>
+    </item>
+    
+    <item>
       <title>Testing R markdown</title>
       <link>https://christytc10.github.io/posts/2021-03-12-testing-r-markdown/</link>
       <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
