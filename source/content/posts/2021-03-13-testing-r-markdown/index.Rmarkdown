@@ -1,0 +1,17 @@
+---
+title: Testing R Markdown
+author: R package build
+date: '2021-03-13'
+slug: []
+categories: []
+tags:
+  - R
+  - Markdown
+draft: yes
+---
+
+Something here
+
+```{R}
+val <- c("Val1","Val2")
+```
