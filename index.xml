@@ -2,17 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Christy Codes</title>
-    <link>https://christytc10.github.io/</link>
+    <link>http://christytc10.github.io/</link>
     <description>Recent content on Christy Codes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Mar 2021 19:54:36 +0000</lastBuildDate><atom:link href="https://christytc10.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://christytc10.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Playing with Rmarkdown</title>
+      <link>http://christytc10.github.io/posts/2021-03-13-playing-with-rmarkdown/</link>
+      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://christytc10.github.io/posts/2021-03-13-playing-with-rmarkdown/</guid>
+      <description>Some R stuff
+myVector &amp;lt;- c(&amp;#34;val1&amp;#34;, &amp;#34;val2&amp;#34;) </description>
+    </item>
+    
     <item>
       <title>A blog? A notebook?</title>
-      <link>https://christytc10.github.io/posts/my-first-post/</link>
+      <link>http://christytc10.github.io/posts/my-first-post/</link>
       <pubDate>Wed, 10 Mar 2021 19:54:36 +0000</pubDate>
       
-      <guid>https://christytc10.github.io/posts/my-first-post/</guid>
+      <guid>http://christytc10.github.io/posts/my-first-post/</guid>
       <description>Creating this site/blog mostly as a learning exercise. I&amp;rsquo;ve got a few wee sideprojects going but I want to start to get more focused in finishing/publishing them. At worst, it&amp;rsquo;ll be some environmental storytelling chronicling my slow(ish) descent into madness</description>
     </item>
     
