@@ -1,0 +1,18 @@
+---
+title: Playing with Rmarkdown
+author: Christopher Campbell
+date: '2021-03-13'
+slug: []
+categories:
+  - R
+  - Blog
+  - Learning
+tags: []
+draft: no
+---
+
+Some R stuff
+
+```{R}
+myVector <- c("val1", "val2")
+```
