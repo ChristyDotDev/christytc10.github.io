@@ -8,13 +8,13 @@
     <language>en-us</language>
     <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://christytc10.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Playing with Rmarkdown</title>
+      <title>Using R to scrape and analyse data - Part 1 - Pulling Draft Pick Data</title>
       <link>https://christytc10.github.io/posts/2021-03-13-playing-with-rmarkdown/</link>
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://christytc10.github.io/posts/2021-03-13-playing-with-rmarkdown/</guid>
-      <description>Some R stuff
-myVector &amp;lt;- c(&amp;#34;val1&amp;#34;, &amp;#34;val2&amp;#34;) </description>
+      <description>R is programming language used for statistical analysis and graphing. I&amp;rsquo;ve been using it for a few months and found it&amp;rsquo;s got a really impressive ecosystem of tools and libraries. My main interest in using it is to make some sense of the masses of data produced by the NFL to try and have a less terrible fantasy football team.
+url &amp;lt;- &amp;#34;https://www.pro-football-reference.com/years/2020/draft.htm&amp;#34; draft_html &amp;lt;- xml2::read_html(url) draft_table &amp;lt;- draft_html %&amp;gt;% rvest::html_nodes(&amp;#34;table#drafts&amp;#34;) %&amp;gt;% rvest::html_table() %&amp;gt;% .</description>
     </item>
     
     <item>
@@ -23,7 +23,8 @@ myVector &amp;lt;- c(&amp;#34;val1&amp;#34;, &amp;#34;val2&amp;#34;) </descripti
       <pubDate>Wed, 10 Mar 2021 19:54:36 +0000</pubDate>
       
       <guid>https://christytc10.github.io/posts/my-first-post/</guid>
-      <description>Creating this site/blog mostly as a learning exercise. I&amp;rsquo;ve got a few wee sideprojects going but I want to start to get more focused in finishing/publishing them. At worst, it&amp;rsquo;ll be some environmental storytelling chronicling my slow(ish) descent into madness</description>
+      <description>Creating this site/blog mostly as a learning exercise. I&amp;rsquo;ve got a few wee sideprojects going but I want to start to get more focused in finishing/publishing them. At worst, it&amp;rsquo;ll be some environmental storytelling chronicling my slow(ish) descent into madness.
+I think posts will take the format of see one, do one, teach one where I try and show my thinking and working with new stuff. I&amp;rsquo;m a backend/Java dev by trade so most of the hobby projects I tinker with are very different to that</description>
     </item>
     
   </channel>

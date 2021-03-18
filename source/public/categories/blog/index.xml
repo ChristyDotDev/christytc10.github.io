@@ -8,13 +8,13 @@
     <language>en-us</language>
     <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://christytc10.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Playing with Rmarkdown</title>
+      <title>Using R to scrape and analyse data - Part 1 - Pulling Draft Pick Data</title>
       <link>https://christytc10.github.io/posts/2021-03-13-playing-with-rmarkdown/</link>
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://christytc10.github.io/posts/2021-03-13-playing-with-rmarkdown/</guid>
-      <description>Some R stuff
-myVector &amp;lt;- c(&amp;#34;val1&amp;#34;, &amp;#34;val2&amp;#34;) </description>
+      <description>R is programming language used for statistical analysis and graphing. I&amp;rsquo;ve been using it for a few months and found it&amp;rsquo;s got a really impressive ecosystem of tools and libraries. My main interest in using it is to make some sense of the masses of data produced by the NFL to try and have a less terrible fantasy football team.
+url &amp;lt;- &amp;#34;https://www.pro-football-reference.com/years/2020/draft.htm&amp;#34; draft_html &amp;lt;- xml2::read_html(url) draft_table &amp;lt;- draft_html %&amp;gt;% rvest::html_nodes(&amp;#34;table#drafts&amp;#34;) %&amp;gt;% rvest::html_table() %&amp;gt;% .</description>
     </item>
     
   </channel>

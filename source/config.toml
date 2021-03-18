@@ -12,7 +12,7 @@ theme = "hugo-theme-m10c"
 
 [params]
   author = "Christy Campbell"
-  description = "Just a super sharp-shooter. Shooting super super sharp shots"
+  description = "website.start()"
   avatar = "https://avatars.githubusercontent.com/u/6845036?s=460&u=553e7df722c52b26858ea003e1ae3a13c6b84a47&v=4"
 
 [[params.social]]

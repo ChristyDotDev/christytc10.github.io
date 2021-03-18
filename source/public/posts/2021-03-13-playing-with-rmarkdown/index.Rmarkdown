@@ -1,5 +1,5 @@
 ---
-title: Playing with Rmarkdown
+title: Using R to scrape and analyse data - Part 1 - Pulling Draft Pick Data
 author: Christopher Campbell
 date: '2021-03-13'
 slug: []
@@ -8,10 +8,40 @@ categories:
   - Blog
   - Learning
 tags: []
-draft: false
+draft: FALSE
 ---
 
-Some R stuff
+R is programming language used for statistical analysis and graphing. I've been using it for
+a few months and found it's got a really impressive ecosystem of tools and libraries. My
+main interest in using it is to make some sense of the masses of data produced by the NFL to
+try and have a less terrible fantasy football team.
+
+```{R message=FALSE, warning=FALSE, include=FALSE}
+library(rvest)
+library(tidyverse)
+library(janitor)
+library(xml2)
+```
+
+
+```{R echo=TRUE, message=FALSE, warning=FALSE}
+url <- "https://www.pro-football-reference.com/years/2020/draft.htm"
+draft_html <- xml2::read_html(url)
+
+draft_table <- draft_html %>%
+  rvest::html_nodes("table#drafts") %>%
+  rvest::html_table() %>%
+  .[[1]] %>%
+  janitor::row_to_names(row_number = 1) %>%
+  select(Rnd, Pick, Tm, Player, Pos, Age, "College/Univ")
+head(draft_table)
+```
+
+
+
+# TODO - Pulling in a datasource, what is a dataframe
+# TODO - Dplyr verbage, compare to streams, functional programming
+# TODO -  Graphing some data
 
 ```{R}
 myVector <- c("val1", "val2")
