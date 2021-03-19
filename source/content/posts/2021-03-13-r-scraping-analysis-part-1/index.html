@@ -234,10 +234,11 @@ print(draft_html)</code></pre>
 ## &lt;html data-version=&quot;klecko-&quot; data-root=&quot;/home/pfr/build&quot; itemscope=&quot;&quot; itemtype=&quot;https://schema.org/WebSite&quot; lang=&quot;en&quot; class=&quot;no-js&quot;&gt;
 ## [1] &lt;head&gt;\n&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8 ...
 ## [2] &lt;body class=&quot;pfr&quot;&gt;\n&lt;div id=&quot;wrap&quot;&gt;\n  \n  &lt;div id=&quot;header&quot; role=&quot;banner&quot; ...</code></pre>
+<p>It’s not immediately obvious from what was printed out there but we’ve basically pulled the html from the webpage into a variable (<code>draft_html</code>) that we can manipulate and use in the code after.</p>
 </div>
 <div id="extract-the-html-table" class="section level3">
 <h3>Extract the HTML table</h3>
-<p>It’s not immediately obvious from what was printed out there but we’ve basically pulled the html from the webpage into a variable (<code>draft_html</code>) that we can manipulate and use in the code after.</p>
+<p>This is bit that rvest does really well; picking off the right HTML node and parsing it into something usable. The html_nodes method lets you pick nodes from the HTML using CSS selectors just like you would in Javascript for a webpage. In this case <code>table#drafts</code> means we are wanting a “table” element with the ID “drafts”. Once we have the right nodes, html_table() takes the nodes and turns them into a tibble (basically a simple dataframe).</p>
 <pre class="r"><code>draft_table &lt;- draft_html %&gt;%
   rvest::html_nodes(&quot;table#drafts&quot;) %&gt;%
   rvest::html_table() %&gt;%
@@ -264,12 +265,11 @@ head(draft_table)</code></pre>
 ## 4         0         0   41   1         Ohio St. College Stats
 ## 5         0         0                   Georgia College Stats
 ## 6         0         0                   Alabama College Stats</code></pre>
-<p>This is bit that rvest does really well; picking off the right HTML node and parsing it into something usable. The html_nodes method lets you pick nodes from the HTML using CSS selectors just like you would in Javascript for a webpage. In this case <code>table#drafts</code> means we are wanting a “table” element with the ID “drafts”. Once we have the right nodes, html_table() takes the nodes and turns them into a tibble (basically a simple dataframe).</p>
-<p><code>[[1]]</code> above is basically because these methods handle lists of nodes and lists of tibbles and we want to pick off the first one to use. If you look at the output above, it’s starting to look like draft data. One tripping hazard though is that if you look closely, the first row which looks like headers is actually being treated as rows of data.</p>
+<p><code>[[1]]</code> above is basically because these methods handle lists of nodes and lists of tibbles and we want to pick off the first one to use. If you look at the output above, it’s starting to look like draft data.</p>
 </div>
 <div id="get-the-row-names-right" class="section level3">
 <h3>Get the row names right</h3>
-<p><a href="https://cran.r-project.org/web/packages/janitor/vignettes/janitor.html#elevate-column-names-stored-in-a-data.frame-row">Janitor</a> is a package we can use to clean up data</p>
+<p>One tripping hazard though is that if you look closely, the first row which looks like headers is actually being treated as rows of data. <a href="https://cran.r-project.org/web/packages/janitor/vignettes/janitor.html#elevate-column-names-stored-in-a-data.frame-row">Janitor</a> is a package we can use to clean up the data, in this case we want to elevate the first row to being treated as a header row and using the values as the column names.</p>
 <pre class="r"><code>draft_table &lt;- draft_html %&gt;%
   rvest::html_nodes(&quot;table#drafts&quot;) %&gt;%
   rvest::html_table() %&gt;%

@@ -61,10 +61,14 @@ draft_html <- xml2::read_html(url)
 print(draft_html)
 ```
 
-### Extract the HTML table
-
 It's not immediately obvious from what was printed out there but we've basically pulled the html from the webpage
 into a variable (`draft_html`) that we can manipulate and use in the code after.
+
+### Extract the HTML table
+
+This is bit that rvest does really well; picking off the right HTML node and parsing it into something usable.
+The html_nodes method lets you pick nodes from the HTML using CSS selectors just like you would in Javascript for a
+webpage. In this case `table#drafts` means we are wanting a "table" element with the ID "drafts". Once we have the right nodes, html_table() takes the nodes and turns them into a tibble (basically a simple dataframe).
 
 ```{R}
 draft_table <- draft_html %>%
@@ -74,15 +78,11 @@ draft_table <- draft_html %>%
 head(draft_table)
 ```
 
-This is bit that rvest does really well; picking off the right HTML node and parsing it into something usable.
-The html_nodes method lets you pick nodes from the HTML using CSS selectors just like you would in Javascript for a
-webpage. In this case `table#drafts` means we are wanting a "table" element with the ID "drafts". Once we have the right nodes, html_table() takes the nodes and turns them into a tibble (basically a simple dataframe).
-
-`[[1]]` above is basically because these methods handle lists of nodes and lists of tibbles and we want to pick off the first one to use. If you look at the output above, it's starting to look like draft data. One tripping hazard though is that if you look closely, the first row which looks like headers is actually being treated as rows of data.
+`[[1]]` above is basically because these methods handle lists of nodes and lists of tibbles and we want to pick off the first one to use. If you look at the output above, it's starting to look like draft data. 
 
 ### Get the row names right
 
-[Janitor](https://cran.r-project.org/web/packages/janitor/vignettes/janitor.html#elevate-column-names-stored-in-a-data.frame-row) is a package we can use to clean up data
+One tripping hazard though is that if you look closely, the first row which looks like headers is actually being treated as rows of data. [Janitor](https://cran.r-project.org/web/packages/janitor/vignettes/janitor.html#elevate-column-names-stored-in-a-data.frame-row) is a package we can use to clean up the data, in this case we want to elevate the first row to being treated as a header row and using the values as the column names.
 
 ```{R message=FALSE, warning=FALSE}
 draft_table <- draft_html %>%
