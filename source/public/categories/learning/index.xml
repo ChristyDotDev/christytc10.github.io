@@ -14,7 +14,7 @@
       
       <guid>https://christytc10.github.io/posts/2021-03-13-playing-with-rmarkdown/</guid>
       <description>R is programming language used for statistical analysis and graphing. I&amp;rsquo;ve been using it for a few months and found it&amp;rsquo;s got a really impressive ecosystem of tools and libraries. My main interest in using it is to make some sense of the masses of data produced by the NFL to try and have a less terrible fantasy football team.
-url &amp;lt;- &amp;#34;https://www.pro-football-reference.com/years/2020/draft.htm&amp;#34; draft_html &amp;lt;- xml2::read_html(url) draft_table &amp;lt;- draft_html %&amp;gt;% rvest::html_nodes(&amp;#34;table#drafts&amp;#34;) %&amp;gt;% rvest::html_table() %&amp;gt;% .</description>
+One of the first things I wanted to do in R was scrape some useful data from the web to analyse.</description>
     </item>
     
   </channel>
