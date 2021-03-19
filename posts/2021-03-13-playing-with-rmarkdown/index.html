@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
   <head>
-    <title>Using R to scrape and analyse data - Part 1 - Pulling Draft Pick Data // Christy Codes</title>
+    <title>Using R to Scrape and Analyse Data - Part 1 - Pulling Draft Pick Data // Christy Codes</title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta charset="utf-8" />
     <meta name="generator" content="Hugo 0.81.0" />
@@ -12,11 +12,11 @@
 
     
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Using R to scrape and analyse data - Part 1 - Pulling Draft Pick Data"/>
+<meta name="twitter:title" content="Using R to Scrape and Analyse Data - Part 1 - Pulling Draft Pick Data"/>
 <meta name="twitter:description" content="R is programming language used for statistical analysis and graphing. I&rsquo;ve been using it for a few months and found it&rsquo;s got a really impressive ecosystem of tools and libraries. My main interest in using it is to make some sense of the masses of data produced by the NFL to try and have a less terrible fantasy football team.
 One of the first things I wanted to do in R was scrape some useful data from the web to analyse."/>
 
-    <meta property="og:title" content="Using R to scrape and analyse data - Part 1 - Pulling Draft Pick Data" />
+    <meta property="og:title" content="Using R to Scrape and Analyse Data - Part 1 - Pulling Draft Pick Data" />
 <meta property="og:description" content="R is programming language used for statistical analysis and graphing. I&rsquo;ve been using it for a few months and found it&rsquo;s got a really impressive ecosystem of tools and libraries. My main interest in using it is to make some sense of the masses of data produced by the NFL to try and have a less terrible fantasy football team.
 One of the first things I wanted to do in R was scrape some useful data from the web to analyse." />
 <meta property="og:type" content="article" />
@@ -64,7 +64,7 @@ One of the first things I wanted to do in R was scrape some useful data from the
       
   <article class="post">
     <header class="post-header">
-      <h1 class ="post-title">Using R to scrape and analyse data - Part 1 - Pulling Draft Pick Data</h1>
+      <h1 class ="post-title">Using R to Scrape and Analyse Data - Part 1 - Pulling Draft Pick Data</h1>
       <div class="post-meta">
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
@@ -78,7 +78,7 @@ One of the first things I wanted to do in R was scrape some useful data from the
   <title>clock</title>
   <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
 </svg>
-          8 min read
+          9 min read
         </div>
       </div>
     </header>
@@ -208,8 +208,8 @@ webpage. In this case <code>table#drafts</code> means we are wanting a &ldquo;ta
 ## 6   1    5 MIA Tua Tagovailoa  QB  22      Alabama
 ## 7   1    6 LAC Justin Herbert  QB  22       Oregon
 </code></pre><h3 id="tweaking-data-types">Tweaking data types</h3>
-<p>You might notice some of the columns above which are supposed to represent numeric values are of type &ldquo;chr&rdquo;. This basically means that the field is treated as a text string rather than a number. It looks fine now but when you try and run mathematical functions against them it will trip you up. For example &ldquo;10&rdquo; is less than &ldquo;2&rdquo; when comparing strings. So, if we want to be able to sort by age or pick the players taken in the first 3 rounds, we&rsquo;ll need to convert those fields to a numeric type. R supports integers or numeric (basically a double or integer) but for our cases here I think integer will do fine.</p>
-<p>Again, dplyr has a <a href="https://dplyr.tidyverse.org/reference/mutate.html">method</a> which can be used for this. There are some libraries which support less verbose ways of doing this but I quite like how clear using  the <code>mutate</code> method is.</p>
+<p>You might not see from the printed tables but some of the columns above which are supposed to represent numeric values are of type &ldquo;chr&rdquo;. This basically means that the field is treated as a text string rather than a number. It looks fine now but when you try and run mathematical functions against them it will trip you up. For example &ldquo;10&rdquo; is less than &ldquo;2&rdquo; when comparing strings. So, if we want to be able to sort by age or pick the players taken in the first 3 rounds, we&rsquo;ll need to convert those fields to a numeric type. R supports integers or numeric (basically a double or integer) but for our cases here I think integer will do fine.</p>
+<p>The <a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a> method can be used for this. There are some libraries which support less verbose ways of doing this but I quite like how clear using the <code>mutate</code> method is.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">draft_table <span style="color:#f92672">&lt;-</span> draft_table <span style="color:#f92672">%&gt;%</span> 
       dplyr<span style="color:#f92672">::</span><span style="color:#a6e22e">mutate</span>(Rnd <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.integer</span>(Rnd),
                     Pick <span style="color:#f92672">=</span> <span style="color:#a6e22e">as.integer</span>(Pick),
@@ -230,11 +230,25 @@ early_round_rbs <span style="color:#f92672">&lt;-</span> draft_table <span style
 ## 8    3   76 TAM       Ke'Shawn Vaughn  RB  23        Illinois
 ## 9    3   86 BUF             Zack Moss  RB  22            Utah
 ## 10   3   93 TEN       Darrynton Evans  RB  22 Appalachian St.
-</code></pre><p>A quick note on this line:</p>
-<blockquote>
-<p>dplyr::filter(Rnd &lt;= 3) %&gt;%</p>
-</blockquote>
-<p>Again, it does pretty much what you&rsquo;d expect, filtering the dataset based on some conditions you pass in. If the row has a value of <code>Rnd</code> which is greater than 3, the row is discarded.</p>
+</code></pre><p>Now we can use the integer fields in mathematical comparisons. For example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">early_round_rbs <span style="color:#f92672">&lt;-</span> draft_table <span style="color:#f92672">%&gt;%</span>
+  dplyr<span style="color:#f92672">::</span><span style="color:#a6e22e">filter</span>(Rnd <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">3</span>) <span style="color:#f92672">%&gt;%</span>
+  dplyr<span style="color:#f92672">::</span><span style="color:#a6e22e">filter</span>(Pos <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;RB&#39;</span>)
+<span style="color:#a6e22e">print</span>(early_round_rbs)
+</code></pre></div><pre><code>##    Rnd Pick  Tm                Player Pos Age    College/Univ
+## 1    1   32 KAN Clyde Edwards-Helaire  RB  21             LSU
+## 2    2   35 DET         D'Andre Swift  RB  21         Georgia
+## 3    2   41 IND       Jonathan Taylor  RB  21       Wisconsin
+## 4    2   52 LAR             Cam Akers  RB  21     Florida St.
+## 5    2   55 BAL          J.K. Dobbins  RB  21        Ohio St.
+## 6    2   62 GNB             AJ Dillon  RB  22     Boston Col.
+## 7    3   66 WAS        Antonio Gibson  RB  22         Memphis
+## 8    3   76 TAM       Ke'Shawn Vaughn  RB  23        Illinois
+## 9    3   86 BUF             Zack Moss  RB  22            Utah
+## 10   3   93 TEN       Darrynton Evans  RB  22 Appalachian St.
+</code></pre><p><code>dplyr::filter(Rnd &lt;= 3)</code> does pretty much what you&rsquo;d expect, filtering the dataset based on some conditions you pass in. If the row has a value of <code>Rnd</code> which is less than or equal to 3, the row is included and passed to the next step, otherwise it is discarded.</p>
+<h3 id="next">Next</h3>
+<p>Next post, I&rsquo;ll try and do something useful with the data. Maybe we can pull the last 10 years' draft picks and find trends in the data.</p>
 
     </div>
     <div class="post-footer">

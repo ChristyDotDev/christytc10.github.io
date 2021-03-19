@@ -1,5 +1,5 @@
 ---
-title: Using R to scrape and analyse data - Part 1 - Pulling Draft Pick Data
+title: Using R to Scrape and Analyse Data - Part 1 - Pulling Draft Pick Data
 author: Christopher Campbell
 date: '2021-03-13'
 slug: []
@@ -184,9 +184,9 @@ head(draft_table)
 
 ### Tweaking data types
 
-You might notice some of the columns above which are supposed to represent numeric values are of type "chr". This basically means that the field is treated as a text string rather than a number. It looks fine now but when you try and run mathematical functions against them it will trip you up. For example "10" is less than "2" when comparing strings. So, if we want to be able to sort by age or pick the players taken in the first 3 rounds, we'll need to convert those fields to a numeric type. R supports integers or numeric (basically a double or integer) but for our cases here I think integer will do fine.
+You might not see from the printed tables but some of the columns above which are supposed to represent numeric values are of type "chr". This basically means that the field is treated as a text string rather than a number. It looks fine now but when you try and run mathematical functions against them it will trip you up. For example "10" is less than "2" when comparing strings. So, if we want to be able to sort by age or pick the players taken in the first 3 rounds, we'll need to convert those fields to a numeric type. R supports integers or numeric (basically a double or integer) but for our cases here I think integer will do fine.
 
-Again, dplyr has a [method](https://dplyr.tidyverse.org/reference/mutate.html) which can be used for this. There are some libraries which support less verbose ways of doing this but I quite like how clear using  the `mutate` method is. 
+The [mutate](https://dplyr.tidyverse.org/reference/mutate.html) method can be used for this. There are some libraries which support less verbose ways of doing this but I quite like how clear using the `mutate` method is. 
 
 
 ```r
@@ -214,8 +214,31 @@ print(early_round_rbs)
 ## 9    3   86 BUF             Zack Moss  RB  22            Utah
 ## 10   3   93 TEN       Darrynton Evans  RB  22 Appalachian St.
 ```
+Now we can use the integer fields in mathematical comparisons. For example:
 
-A quick note on this line:
-> dplyr::filter(Rnd <= 3) %>%
+```r
+early_round_rbs <- draft_table %>%
+  dplyr::filter(Rnd <= 3) %>%
+  dplyr::filter(Pos == 'RB')
+print(early_round_rbs)
+```
 
-Again, it does pretty much what you'd expect, filtering the dataset based on some conditions you pass in. If the row has a value of `Rnd` which is greater than 3, the row is discarded. 
+```
+##    Rnd Pick  Tm                Player Pos Age    College/Univ
+## 1    1   32 KAN Clyde Edwards-Helaire  RB  21             LSU
+## 2    2   35 DET         D'Andre Swift  RB  21         Georgia
+## 3    2   41 IND       Jonathan Taylor  RB  21       Wisconsin
+## 4    2   52 LAR             Cam Akers  RB  21     Florida St.
+## 5    2   55 BAL          J.K. Dobbins  RB  21        Ohio St.
+## 6    2   62 GNB             AJ Dillon  RB  22     Boston Col.
+## 7    3   66 WAS        Antonio Gibson  RB  22         Memphis
+## 8    3   76 TAM       Ke'Shawn Vaughn  RB  23        Illinois
+## 9    3   86 BUF             Zack Moss  RB  22            Utah
+## 10   3   93 TEN       Darrynton Evans  RB  22 Appalachian St.
+```
+
+`dplyr::filter(Rnd <= 3)` does pretty much what you'd expect, filtering the dataset based on some conditions you pass in. If the row has a value of `Rnd` which is less than or equal to 3, the row is included and passed to the next step, otherwise it is discarded. 
+
+### Next
+
+Next post, I'll try and do something useful with the data. Maybe we can pull the last 10 years' draft picks and find trends in the data. 
