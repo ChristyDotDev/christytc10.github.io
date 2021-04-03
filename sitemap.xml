@@ -2,30 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://christy.scot/categories/blog/</loc>
+    <loc>https://blog.christy.scot/categories/blog/</loc>
     <lastmod>2021-03-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://christy.scot/categories/</loc>
+    <loc>https://blog.christy.scot/categories/</loc>
     <lastmod>2021-03-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://christy.scot/</loc>
+    <loc>https://blog.christy.scot/</loc>
     <lastmod>2021-03-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://christy.scot/categories/learning/</loc>
+    <loc>https://blog.christy.scot/categories/learning/</loc>
     <lastmod>2021-03-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://christy.scot/posts/</loc>
+    <loc>https://blog.christy.scot/posts/</loc>
     <lastmod>2021-03-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://christy.scot/categories/r/</loc>
+    <loc>https://blog.christy.scot/categories/r/</loc>
     <lastmod>2021-03-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://christy.scot/posts/2021-03-13-r-scraping-analysis-part-1/</loc>
+    <loc>https://blog.christy.scot/posts/2021-03-13-r-scraping-analysis-part-1/</loc>
     <lastmod>2021-03-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://christy.scot/posts/my-first-post/</loc>
+    <loc>https://blog.christy.scot/posts/my-first-post/</loc>
     <lastmod>2021-03-10T19:54:36+00:00</lastmod>
   </url><url>
-    <loc>https://christy.scot/tags/</loc>
+    <loc>https://blog.christy.scot/tags/</loc>
   </url>
 </urlset>
