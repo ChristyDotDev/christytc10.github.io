@@ -1,4 +1,4 @@
-baseURL = "http://blog.christy.scot/"
+baseURL = "https://blog.christy.scot/"
 languageCode = "en-us"
 title = "Christy Codes"
 theme = "hugo-theme-m10c"
