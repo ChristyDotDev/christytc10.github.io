@@ -1,0 +1,25 @@
+---
+title: Roster App in Shiny
+author: R package build
+date: '2021-04-06'
+slug: []
+categories: []
+tags: []
+draft: yes
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{R include=FALSE}
+library(knitr)
+library(shiny)
+```
+
+# Testing a blog post with a shiny app in it
+
+```{R echo=FALSE, message=FALSE, warning=FALSE}
+knitr::include_app("https://yihui.shinyapps.io/miniUI/", height = "600px")
+```
+
+

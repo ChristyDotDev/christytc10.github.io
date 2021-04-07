@@ -1,0 +1,24 @@
+---
+title: Roster App in Shiny
+author: R package build
+date: '2021-04-06'
+slug: []
+categories: []
+tags: []
+draft: yes
+output: html_document
+editor_options:
+  chunk_output_type: console
+---
+
+```{R include=FALSE}
+library(knitr)
+```
+
+# Testing a blog post with a shiny app in it
+
+```{R}
+knitr::include_app('https://christyc92.shinyapps.io/positional-strength', height = '600px')
+```
+
+
